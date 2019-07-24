@@ -1,8 +1,8 @@
 // Plugins block must look like this
 plugins {
     id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-android-extensions")
+    kotlin("android")
+    kotlin("android.extensions")
 }
 
 android {
@@ -17,15 +17,18 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
-            minifyEnabled = false
+        // This must look like this
+        getByName("release") {
+            isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 }
 
 dependencies {
-    implementation(fileTree(dir: "libs", include: ["*.jar"]))
+    // This must look like this
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41")
     implementation("androidx.appcompat:appcompat:1.0.2")
     implementation("androidx.core:core-ktx:1.0.2")

@@ -15,6 +15,8 @@
 
 // Tasks block must be changed
 
+// Module level build script must be changed (see app-level build.gradle.kts for details)
+
 buildscript {
     repositories {
         google()
