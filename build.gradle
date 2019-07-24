@@ -1,11 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-// All strings in settings.gradle, project-level build.gradle and module-level build.gradle files
+// To convert build scripts from Groovy to Kotlin:
+
+// All strings in settings.gradle.kts, project-level build.gradle and module-level build.gradle files
 // must have double quotes.
 
 // All property assignments must look like "versionCode = 1"
 
 // All function invocations must look like "implementation("androidx.appcompat:appcompat:1.0.2")"
+
+// Use plugins block (in app-level build.gradle) instead of separate "apply plugin" statements
+
+// Build script file extensions must be .gradle.kts
 
 buildscript {
     ext.kotlin_version = "1.3.41"
